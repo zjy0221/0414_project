@@ -6,24 +6,26 @@ using System.Web.Mvc;
 
 namespace Web410919954.Controllers
 {
-    public class HomeController : Controller
+    public class TestController : Controller
     {
+        // GET: Test
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult HW1()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult HW2()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult HW3()
+        {
             return View();
         }
 
