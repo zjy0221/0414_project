@@ -26,6 +26,8 @@ namespace Web410919954.Controllers
 
         public ActionResult HW3()
         {
+            ViewBag.A = "vita";
+            ViewData["B"] = "Amy";
             return View();
         }
 

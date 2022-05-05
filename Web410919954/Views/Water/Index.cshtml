@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>建議的喝水量</h2>
+
+@using (Html.BeginForm("Index", "Water", FormMethod.Get))
+{
+    <p>姓名：@Html.TextBox("name")</p>
+    <p>體重：@Html.TextBox("體重")</p>
+
+
+    <p>嗨！@ViewBag.Name ，建議喝水量：@ViewBag.Sum</p>
+    <input type="submit" name="name" value="送出" />
+}
+
