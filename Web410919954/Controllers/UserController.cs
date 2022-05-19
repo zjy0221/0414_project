@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web410919954._0519_Class;
 
 namespace Web410919954.Controllers
 {
@@ -12,33 +13,19 @@ namespace Web410919954.Controllers
         // GET: User
         public ActionResult SignUp()
         {
-            return View();
+            return View( new SignUpData() );
         }
 
         [ HttpPost ]
-        public ActionResult SignUp(string name, string account , string pd)
+        public ActionResult SignUp( SignUpData  data)
         {
-            if (name.IsNullOrWhiteSpace()) 
+
+            if (ModelState.IsValid)
             {
-                ViewBag.NameMessage = "請輸入名字";
+                data.Message = "註冊成功！";
             }
 
-            if (account.IsNullOrWhiteSpace())
-            {
-                ViewBag.AcMessage = "請輸入帳號";
-            }
-
-            if (pd.IsNullOrWhiteSpace())
-            {
-                ViewBag.PdMessage = "請輸入密碼";
-            }
-
-            if ( ! name.IsNullOrWhiteSpace()  && ! account.IsNullOrWhiteSpace()  &&  ! pd.IsNullOrWhiteSpace())
-            {
-                ViewBag.Message = "註冊成功！";
-            }
-
-            return View();
+            return View(data);
 
         }
     }

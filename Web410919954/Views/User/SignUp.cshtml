@@ -1,20 +1,37 @@
-﻿
+﻿@model Web410919954._0519_Class.SignUpData
+
 @{
     ViewBag.Title = "SignUp";
 }
 
 <h2>會員註冊</h2>
 
-@using (Html.BeginForm("SignUp", "User", FormMethod.Post)) 
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
 {
 
-    <p>姓名：@Html.TextBox("name")  @ViewBag.NameMessage</p>
-    <p>帳號：@Html.TextBox("account")  @ViewBag.AcMessage</p>
-    <p>密碼：@Html.Password("pd")   @ViewBag.PdMessage</p>
+    <p>
+        @Html.DisplayNameFor(a => a.name)：
+        @Html.TextBoxFor(a => a.name)
+        @Html.ValidationMessageFor(a => a.name)
+    </p>
 
-    <p>@ViewBag.Message</p>
 
-     <input type="submit" value="註冊" />
+    <p>
+        @Html.DisplayNameFor(a => a.account)：
+        @Html.TextBoxFor(a => a.account)
+        @Html.ValidationMessageFor(a => a.account)
+    </p>
 
-        }
+
+    <p>
+        @Html.DisplayNameFor(a => a.pd)：
+        @Html.PasswordFor(a => a.pd)
+        @Html.ValidationMessageFor(a => a.pd)
+    </p>
+
+    <p>@Model.Message</p>
+
+    <input type="submit" value="註冊" />
+
+}
 
